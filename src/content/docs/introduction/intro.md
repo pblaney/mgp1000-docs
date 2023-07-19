@@ -11,4 +11,4 @@ The MGP1000 offers a singular, consistent, automated workflow that is portable a
 
 The entire pipeline is divided into 3 modules: Preprocessing, Germline, and Somatic
 
-![Flowchart](./src/assets/pipelineFlowArchitecture.png)
+ <img src="https://github.com/pblaney/mgp1000-docs/raw/main/src/assets/pipelineFlowArchitecture.png" alt="Pipeline Workflow">
