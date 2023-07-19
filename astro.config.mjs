@@ -10,6 +10,7 @@ export default defineConfig({
 
   integrations: [
     starlight({
+      
       title: 'Docs',
       logo: {
         src: './src/assets/mgp1000Logo.svg',
