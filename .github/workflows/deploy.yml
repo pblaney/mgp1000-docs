@@ -20,6 +20,7 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+
       - name: Install, build, and upload your site output
         uses: withastro/action@v0
 
@@ -31,7 +32,7 @@ jobs:
 
         # Not using npm? Change `npm ci` to `yarn install` or `pnpm i`
         - name: Install dependencies
-          run: npm install
+          run: npm install @astrojs/starlight@latest
 
         # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
         - name: Build MGP1000 Docs

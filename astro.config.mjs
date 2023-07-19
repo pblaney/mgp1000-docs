@@ -6,7 +6,7 @@ export default defineConfig({
 
   // Site top-level settings
   site: 'https://pblaney.github.io',
-  base: '/mgp1000',
+  base: '/mgp1000-docs',
 
   integrations: [
     starlight({
@@ -23,7 +23,13 @@ export default defineConfig({
           label: 'Overview',
           items: [
             // Each item here is one entry in the navigation menu.
-            { label: 'Introduction', link: '/introduction/intro' },
+            { label: 'Introduction', link: 'introduction/intro' },
+          ],
+        },
+        {
+          label: 'Guides',
+          items: [
+            { label: 'Installation', link: 'installation/install' }
           ],
         },
         {
