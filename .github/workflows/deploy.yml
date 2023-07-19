@@ -4,10 +4,10 @@ on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [main]
+    branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
-
+  
 # Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
@@ -20,25 +20,8 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-
-      - name: Install, build, and upload your site output
+      - name: Install, build, and upload your site
         uses: withastro/action@v0
-
-        - name: Use Node.js 16
-          uses: actions/setup-node@v2
-          with:
-            node-version: '16'
-            cache: 'npm'
-
-        # Not using npm? Change `npm ci` to `yarn install` or `pnpm i`
-        - name: Install dependencies
-          run: npm install @astrojs/starlight@latest
-
-        # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
-        - name: Build MGP1000 Docs
-          run: npm run build
-        
-
         # with:
             # path: . # The root location of your Astro project inside the repository. (optional)
             # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
