@@ -13,7 +13,7 @@ export default defineConfig({
       
       title: 'Docs',
       logo: {
-        src: './src/assets/mgp1000Logo.svg',
+        src: '/src/assets/mgp1000Logo.svg',
       },
       social: {
         github: 'https://github.com/pblaney/mgp1000',
@@ -23,13 +23,14 @@ export default defineConfig({
           label: 'Overview',
           items: [
             // Each item here is one entry in the navigation menu.
-            { label: 'Introduction', link: 'introduction/intro' },
+            { label: 'Introduction', link: 'overview/intro' }
           ],
         },
         {
           label: 'Guides',
           items: [
-            { label: 'Installation', link: 'installation/install' }
+            { label: 'Installation', link: 'guides/install' },
+            { label: 'Prepare Data', link: 'guides/input' }
           ],
         },
         {
