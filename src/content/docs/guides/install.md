@@ -13,16 +13,18 @@ The pipeline was developed to be run on various HPCs without concern of environm
 
 ## Clone GitHub Repository
 
-```
+```sh
 git clone https://github.com/pblaney/mgp1000.git
 ```
-> This will take a few minutes to pull containers and reference data
+:::note
+This will take a few minutes to pull containers and reference data
+:::
 
 ## Prep the Pipeline for Usage
 
 Unzip some reference files and create some additional directories for input files and logs.
 
-```
+```sh
 make prep-pipeline
 ```
 
@@ -33,29 +35,41 @@ make prep-pipeline
 <br>
 In an effort to containerize the pipeline further, all the necessary reference files and Singularity container images are maintained in the repository using Git's Large File Storage (LFS) extension.
 
+# 
+
 First, a quick test ...
-```
+```sh
 git-lfs version
 ```
-> If this works, you're done! All is well and you can move on! If not, follow below ...
+:::note
+If this works, you're done! All is well and you can move on! If not, follow below ...
+:::
+
+# 
 
 Install git-lfs Linux AMD64 binary executible file (v3.2.0). Other binary files available [here](https://github.com/git-lfs/git-lfs/releases)
-```
+```sh
 make install-gitlfs-linuxamd64
 ```
 
+# 
+
 Move the `git-lfs` binary to a location on `$PATH`
-```
+```sh
 mv git-lfs $HOME/bin
 ```
 
+# 
+
 Complete the install and configuration
-```
+```sh
 git-lfs install
 ```
 
+# 
+
 Use `git-lfs` to complete the clone
-```
+```sh
 git-lfs pull
 ```
 
@@ -66,12 +80,14 @@ git-lfs pull
 <br>
 It is always preferred to use your HPC's installed module of Nextflow. However, follow below for installation of the Nextflow binary. The most current version of Nextflow requires Java 11 or later. Therefore, the user may need to load this version of Java to complete the install.
 
-```
+```sh
 make install-nextflow
 ```
 
+# 
+
 Move the `nextflow` binary to a location on `$PATH`
-```
+```sh
 mv nextflow $HOME/bin
 ```
 
