@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [
     starlight({
       
-      title: 'Docs',
+      title: 'MGP1000',
       logo: {
         src: '/src/assets/mgp1000Logo.svg',
       },
@@ -31,7 +31,8 @@ export default defineConfig({
           items: [
             { label: 'Installation', link: 'guides/install' },
             { label: 'Prepare Data', link: 'guides/input' },
-            { label: 'Usage', link: 'guides/usage' }
+            { label: 'Usage', link: 'guides/usage' },
+            { label: 'Output', link: 'guides/output' }
           ],
         },
         {
