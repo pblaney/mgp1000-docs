@@ -11,6 +11,8 @@ The pipeline was developed to be run on various HPCs without concern of environm
 * `singularity` (confirmed usage on v3.1, v3.5.2, v3.7.1, v3.9.8)
 * `nextflow` (>=20.01.0)
 
+---
+
 ## Clone GitHub Repository
 
 ```sh
@@ -20,6 +22,8 @@ git clone https://github.com/pblaney/mgp1000.git
 This will take a few minutes to pull containers and reference data
 :::
 
+---
+
 ## Prep the Pipeline for Usage
 
 Unzip some reference files and create some additional directories for input files and logs.
@@ -28,7 +32,7 @@ Unzip some reference files and create some additional directories for input file
 make prep-pipeline
 ```
 
-### Having Trouble ...
+### Having Trouble?
 
 <details>
 <summary>Need to install git-lfs ...</summary>
@@ -92,3 +96,5 @@ mv nextflow $HOME/bin
 ```
 
 </details>
+
+---

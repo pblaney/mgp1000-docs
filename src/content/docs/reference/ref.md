@@ -1,28 +1,41 @@
 ---
 title: Provenance
-description: A reference page in my new Starlight docs site.
+description: What's under the hood ...
 ---
 
 These reference pages provide in-depth provenance on the processes in each module. Detailing the input and output file format, the execution command, and any reference data.
 
-## Preprocessing
+---
 
-### Tools
+## Preprocessing 🟢
+Placeholder text
 
-### Output
+### Tools 🛠️
+Placeholder text
 
+### Output 🌟
+Placeholder text
 
+---
 
-## Germline
+## Germline 🔵
+Placeholder text
 
-### Tools
+### Tools 🛠️
+Placeholder text
 
-### Output
+### Output 🌟
+Placeholder text
 
+---
 
+## Somatic ⚫️
+Placeholder text
 
-## Somatic
+### Tools 🛠️
+Placeholder text
 
-### Tools
+### Output 🌟
+Placeholder text
 
-### Output
+---

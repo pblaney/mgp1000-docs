@@ -459,3 +459,55 @@ nextflow run somatic.nf \
 > EXPERIMENTAL! Requires many process directories and only calls in WES targets
 >
 > Default: `off` | Available: `on`, `off`
+
+
+## Batch Submission of Pipeline Runs
+In the event the user is required to submit the parent `nextflow run` process as a batch submission, there is a script `bin/nextflow_run_slurm_submitter.sh` that will accept user-specified parameters for running any pipeline module by first generating and executing a Slurm `sbatch` submission script. Below is the full help message and usage example for each step.
+
+```sh
+bin/nextflow_run_slurm_submitter.sh -h
+```
+
+:::tip[Different executor?]
+Feel free to [contact](https://github.com/pblaney/mgp1000/tree/master#contact) for help in development of wrapper script.
+:::
+
+### Use-cases
+Below are a series of common use-cases for users to wrap parent run process into a batch submission.
+
+Common use-case for running the **Preprocessing** module
+```sh
+bin/nextflow_run_slurm_submitter.sh \
+    preprocessing.nf \
+    batch1 \
+    user@example.com \
+    3 \
+    "module load java/1.8 nextflow/22.0.8 singularity/3.9.8" \
+    "--input_format fastq"
+```
+
+
+Common use-case for running the **Germline** module
+```sh
+bin/nextflow_run_slurm_submitter.sh \
+    germline.nf \
+    batch2 \
+    user@example.com \
+    14 \
+    "module load java/1.8 nextflow/22.0.8 singularity/3.9.8" \
+    "--sample_sheet normal.csv"
+```
+
+
+Common use-case for running the **Somatic** module
+```sh
+bin/nextflow_run_slurm_submitter.sh \
+    somatic.nf \
+    batch3 \
+    user@example.com \
+    7 \
+    "module load java/1.8 nextflow/22.0.8 singularity/3.9.8" \
+    "--sample_sheet tumor_normal.csv"
+```
+
+---
