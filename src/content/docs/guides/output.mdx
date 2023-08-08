@@ -6,39 +6,61 @@ By default, all output files stored into module-specific subdirectories within t
 
 Click on a tab below for details on output for each module ...
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem, Icon } from '@astrojs/starlight/components';
 
 <Tabs>
   <TabItem label="Preprocessing">
 
   | Subdirectory | Output Files | Description of Files |
   | --- | --- | --- |
-  | `trimLogs` | `*.trim.log` | number of reads before and after trimming for quality |
-  | `fastqc` | `*_fastqc.[html / zip]` | in-depth quality evaluation on a per base and per sequence manner | 
-  | `alignmentFlagstats` | `*.alignment.flagstat.log` | initial number of reads of various alignment designation |
-  | `markdupFlagstats` | `*.markdup.[log / flagstat.log]` | number of detected duplicate reads, number of reads after deduplication |
-  | `finalPreprocessedBams` | `*.final.[bam / bai]` | final preprocessed BAM and index for downstream analysis |
-  | `coverageMetrics` | `*.coverage.metrics.txt` | genome-wide coverage metrics of final BAM |
-  | `gcBiasMetrics` | `*.gcbias.[metrics.txt / metrics.pdf / summary.txt]` | genome-wide GC bias metrics of final BAM |
+  | `abra` | `*.abra.log` | number of reads before and after realignment for quality; WES only |
+  | `alfred` | `*.alfred.qc.[json.gz / summary.txt / txt.gz]` | in-depth quality evaluation genome-wide alignment metrics of final BAM | 
+  | `fastqc` | `*_fastqc.[html / zip]` | in-depth quality evaluation on a per base and per sequence manner |
+  | `finalBams` | `*.final.[bam / bai]` | final preprocessed BAM and index for downstream analysis |
+  | `trimmomatic` | `*.trimmomatic.log` | number of reads before and after trimming for quality |
+
+  ---
+
+  :::tip[Provenance]
+  Further description of output file types and how to use them ...
+  [<Icon name="information" color="goldenrod" size="1.5rem"/>](https://pblaney.github.io/mgp1000-docs/reference/ref/#output)
+  :::
 
   </TabItem>
   <TabItem label="Germline">
 
-  | Germline Output File | Description of File |
+  | Output File | Description of File |
   | --- | --- |
-  | `*.deepvariant.germline.snp.indel.vcf.gz` | germline SNP and InDel VCF |
-  | `*.fastngsadmix.23.qopt` | per patient estimated admixture proportions, first two rows with the names of the populations analyzed and the converged upon estimates, and then 100 rows with the bootstrapping estimates |
+  | `*.deepvariant.germline.snp.indel.[vcf.gz / tbi]` | germline SNP and InDel VCF |
+  | `*.fastngsadmix.23.[qopt / log]` | per patient estimated admixture proportions |
+  
+  ---
+
+  :::tip[Provenance]
+  Further description of output file types and how to use them ...
+  [<Icon name="information" color="goldenrod" size="1.5rem"/>](https://pblaney.github.io/mgp1000-docs/reference/ref/#output-1)
+  :::
 
   </TabItem>
   <TabItem label="Somatic">
+  The main output is found in the `somatic/consensus` output directory, where each sample has a subdirectoy with the following files:
 
-  | Somatic Consensus Output File | Description of File |
+  | Output File | Description of File |
   | --- | --- |
   | `*.hq.union.consensus.somatic.snv.txt.gz` | consensus SNV table |
   | `*.hq.union.consensus.somatic.indel.txt.gz` | consensus InDel table |
   | `*.hq.union.consensus.somatic.cnv.bed` | consensus CNV BED |
   | `*.hq.union.consensus.somatic.sv.bedpe` | consensus SV BEDPE |
   | `*.hq.union.consensus.somatic.sv.intersection.plot.pdf` | intersection of SV caller consensus |
+  
+  ---
+
+  :::tip[Provenance]
+  Further description of output file types and how to use them ...
+  [<Icon name="information" color="goldenrod" size="1.5rem"/>](https://pblaney.github.io/mgp1000-docs/reference/ref/#output-2)
+  :::
+
+  #
 
   Additional per-tool subdirectories included in the base `output/somatic` output directory:
 

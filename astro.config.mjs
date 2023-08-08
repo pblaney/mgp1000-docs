@@ -30,9 +30,9 @@ export default defineConfig({
           label: 'Guides',
           items: [
             { label: 'Installation', link: 'guides/install' },
-            { label: 'Prepare Data', link: 'guides/input' },
-            { label: 'Usage', link: 'guides/usage' },
-            { label: 'Output', link: 'guides/output' }
+            { label: 'Prepare Input Data', link: 'guides/input' },
+            { label: 'Module Usage', link: 'guides/usage' },
+            { label: 'Output Data', link: 'guides/output' }
           ],
         },
         {

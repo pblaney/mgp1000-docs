@@ -22,6 +22,8 @@ User-specific configurations are possible for any of these [executors](https://w
 Feel free to [contact](https://github.com/pblaney/mgp1000/tree/master#contact) for help in development.
 :::
 
+---
+
 ## Quickstart Demo ⚡️
 A quick demo of running the Preprocessing module and sanity check of the installation:
 
@@ -41,7 +43,7 @@ This demo should run quickly, however you can add the flag `-bg` to execute the 
 ---
 
 ## Preprocessing 🟢
-Placeholder for short description
+To produce high-quality variant calls, the input data preprocessing must be uniform and deterministic. Additionally, there needs to be consistent collection of standardized QC metrics. The Preprocessing module achieves these endpoints by adhering to the best practices as laid out by the **GATK**: alignment with **BWA mem**, post-processing with **samtools** followed by BQSR. Finally, robust QC metrics are recorded with **FastQC** (pre-alignment) and **Alfred** (post-alignment).
 
 Placeholder for image of module flowchart
 
@@ -134,7 +136,7 @@ nextflow run preprocessing.nf \
 ###### `--seq_protocol`
 > Sequencing protocol of the input, WGS for whole-genome and WES for whole-exome
 >
-> Default: `WGS` | Available: `WGS`, `WES`
+> Default: `WGS` | Available: `WES`, `WGS`
 
 ###### `--cpus`
 > Globally set the number of cpus to be allocated
@@ -155,12 +157,10 @@ nextflow run preprocessing.nf \
 ###### `--help`
 > Prints help message
 
-DIRECT USERS TO PREPROCESSING OUTPUT GUIDE
-
 ---
 
 ## Germline 🔵
-Placeholder for short description
+The matched normal sample BAM is used to call germline SNPs and InDels in a highly parallel fashion with **DeepVariant**. Additionally, the ancestry admixture likelihood is estimated in the context of 23 reference populations from the *1000 Genomes Project* using **fastNGSadmix**.
 
 Placeholder for image of module flowchart
 
@@ -267,19 +267,17 @@ nextflow run germline.nf \
 ###### `--help`
 > Prints help message
 
-DIRECT USERS TO GERMLINE OUTPUT GUIDE
-
 ---
 
 ## Somatic ⚫️
-Placeholder for concise descriptor of default and modularity
+The matched tumor/normal BAM pair is used in somatic variant analysis employing a consensus mechanism for determining the final set of somatic events, including **Mutect2**, **Strelka2**, and **VarScan2** for SNVs; **Mutect2**, **Strelka2**, **VarScan2**, and **SvABA** for InDels; **Battenberg** and **FACETS** for CNVs; **Manta**, **SvABA**, **DELLY2**, and **IgCaller** for SVs.
 
 Placeholder for image of module flowchart
 
 ### Use-cases 🔍
 Below are a series of common use-cases and example code snippets of `nextflow run` commands that execute the pipeline module.
 
-**The most common use-case:** run full somatic analysis (`snv` | `indel` | `cnv` | `sv` )
+**The most common use-case:** run full somatic analysis
 ```sh
 nextflow run somatic.nf \
   -bg \
@@ -354,11 +352,6 @@ nextflow run somatic.nf \
 > Prints help message
 
 #### Toolbox Arguments
-
-###### `--battenberg`
-> Indicates whether or not to use this tool
->
-> Default: `on` | Available: `off`, `on`
 
 ###### `--battenberg`
 > Indicates whether or not to use this tool
@@ -466,5 +459,3 @@ nextflow run somatic.nf \
 > EXPERIMENTAL! Requires many process directories and only calls in WES targets
 >
 > Default: `off` | Available: `on`, `off`
-
-DIRECT USERS TO SOMATIC OUTPUT GUIDE

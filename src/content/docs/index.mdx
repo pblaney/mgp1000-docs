@@ -1,5 +1,5 @@
 ---
-title: Myeloma Genome Pipeline 1000
+title: MGP1000
 description: Nextflow bioinformatics pipeline for large-scale analysis of Multiple Myeloma genomes
 template: splash
 hero:
@@ -13,21 +13,35 @@ hero:
       variant: primary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, Icon } from '@astrojs/starlight/components';
+
 
 ## Table of Contents
 
 <CardGrid stagger>
-  <Card title="Introduction" icon="document">
-    Edit `src/content/docs/index.mdx` to see this page change.
+  <Card title="Overview" icon="open-book">
+    Bird's-eye view of the pipeline
+
+    [<Icon name="external" color="white" size="1.5rem"/>](overview/intro)
   </Card>
-  <Card title="Preprocessing" icon="document">
-    Add Markdown or MDX files to `src/content/docs` to create new pages.
+  <Card title="Preprocessing Module" icon="document">
+    Perform paired-end read data preprocessing according to best practices
+
+    [<Icon name="external" color="white" size="1.5rem"/>](guides/usage/#preprocessing)
   </Card>
-  <Card title="Germline" icon="document">
-    Edit your `sidebar` and other config in `astro.config.mjs`.
+  <Card title="Germline Module" icon="document">
+    Perform germline variant analyais, calling SNPs and InDels and estimate the ancestral admixture of each sample
+
+    [<Icon name="external" color="white" size="1.5rem"/>](guides/usage/#germline)
   </Card>
-  <Card title="Somatic" icon="document">
-    Learn more in [the Starlight Docs](https://starlight.astro.build/).
+  <Card title="Somatic Module" icon="document">
+    Perform matched tumor/normal somatic variant analyais, calling SNVs, InDels, CNVs, and SVs with consensus mechanism
+
+    [<Icon name="external" color="white" size="1.5rem"/>](guides/usage/#somatic)
+  </Card>
+  <Card title="Output Files" icon="star">
+    View a description of the output files for each module. Further detail of each output file format and some potential intended downstream usage is found in the Provenance for each module.
+
+    [<Icon name="external" color="white" size="1.5rem"/>](guides/output)
   </Card>
 </CardGrid>
