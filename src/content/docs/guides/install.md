@@ -31,6 +31,9 @@ Unzip some reference files and create some additional directories for input file
 ```sh
 make prep-pipeline
 ```
+:::caution
+This step must be run in order to complete the pipeline installation! DO NO SKIP
+:::
 
 ### Having Trouble?
 
