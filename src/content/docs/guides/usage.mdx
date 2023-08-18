@@ -42,10 +42,10 @@ This demo should run quickly, however you can add the flag `-bg` to execute the 
 
 ---
 
-## Preprocessing 🟢
+## Preprocessing 🔵
 To produce high-quality variant calls, the input data preprocessing must be uniform and deterministic. Additionally, there needs to be consistent collection of standardized QC metrics. The Preprocessing module achieves these endpoints by adhering to the best practices as laid out by the **GATK**: alignment with **BWA mem**, post-processing with **samtools** followed by BQSR. Finally, robust QC metrics are recorded with **FastQC** (pre-alignment) and **Alfred** (post-alignment).
 
-Placeholder for image of module flowchart
+Placeholder for image of module DAG
 
 ### Use-cases 🔍
 Below are a series of common use-cases and example code snippets of `nextflow run` commands that execute the pipeline module.
@@ -159,10 +159,10 @@ nextflow run preprocessing.nf \
 
 ---
 
-## Germline 🔵
+## Germline 🟢
 The matched normal sample BAM is used to call germline SNPs and InDels in a highly parallel fashion with **DeepVariant**. Additionally, the ancestry admixture likelihood is estimated in the context of 23 reference populations from the *1000 Genomes Project* using **fastNGSadmix**.
 
-Placeholder for image of module flowchart
+Placeholder for image of module DAG
 
 ### Use-cases 🔍
 Below are a series of common use-cases and example code snippets of `nextflow run` commands that execute the pipeline module.
@@ -270,9 +270,9 @@ nextflow run germline.nf \
 ---
 
 ## Somatic ⚫️
-The matched tumor/normal BAM pair is used in somatic variant analysis employing a consensus mechanism for determining the final set of somatic events, including **Mutect2**, **Strelka2**, and **VarScan2** for SNVs; **Mutect2**, **Strelka2**, **VarScan2**, and **SvABA** for InDels; **Battenberg** and **FACETS** for CNVs; **Manta**, **SvABA**, **DELLY2**, and **IgCaller** for SVs.
+The matched tumor/normal BAM pair is used in somatic variant analysis employing a consensus mechanism for determining the final set of somatic events, including **Mutect2**, **Strelka2**, and **VarScan2** for *SNVs*; **Mutect2**, **Strelka2**, **VarScan2**, and **SvABA** for *InDels*; **Battenberg** and **FACETS** for *CNVs*; **Manta**, **SvABA**, **DELLY2**, and **IgCaller** for *SVs*.
 
-Placeholder for image of module flowchart
+Placeholder for image of module DAG
 
 ### Use-cases 🔍
 Below are a series of common use-cases and example code snippets of `nextflow run` commands that execute the pipeline module.

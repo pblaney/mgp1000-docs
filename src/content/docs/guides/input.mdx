@@ -9,7 +9,7 @@ Click on a tab below for details on input needed for each module ...
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 <Tabs>
-  <TabItem label="Preprocessing 🟢">
+  <TabItem label="Preprocessing 🔵">
   	The Preprocessing module currently supports `fastq` or `bam` as `--input_format` and `WGS` or `WES` as `--seq_protocol`. This includes lane split FASTQs (See below for validated naming conventions). The files will be merged internally as part of the module run and will not alter any input files.
 
     # 
@@ -40,16 +40,18 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
     # 
     
     Validated naming conventions for lane split FASTQs:
-    * `_L00[1-9]_R[12]\.f.*q.gz`
-    * `_00[1-9]_R[12]\.f.*q.gz`
-    * `_R[12]_00[1-9]\.f.*q.gz`
+    * `_L00[1-9]_R[12]_[\d\w]+`
+    * `_L00[1-9]_R[12]`
+    * `_00[1-9]_R[12]_[\d\w]+`
+    * `_00[1-9]_R[12]`
+    * `_R[12]_00[1-9]`
 
     > Not sure if your FASTQs will work? Test their filename against the regex strings listed above [here.](https://regex101.com)
 
     ---
 
   </TabItem>
-  <TabItem label="Germline 🔵">
+  <TabItem label="Germline 🟢">
   	The Germline module currently supports any GRCh38 aligned `bam` for either `WGS` or `WES` as `--seq_protocol`. Only additional input needed is an index (`.bai`) for the `bam` and a sample sheet CSV file.
 
     #

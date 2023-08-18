@@ -9,7 +9,7 @@ Click on a tab below for details on output for each module ...
 import { Tabs, TabItem, Icon } from '@astrojs/starlight/components';
 
 <Tabs>
-  <TabItem label="Preprocessing 🟢">
+  <TabItem label="Preprocessing 🔵">
 
   | Subdirectory | Output Files | Description of Files |
   | --- | --- | --- |
@@ -17,6 +17,7 @@ import { Tabs, TabItem, Icon } from '@astrojs/starlight/components';
   | `alfred` | `*.alfred.qc.[json.gz / summary.txt / txt.gz]` | in-depth quality evaluation genome-wide alignment metrics of final BAM | 
   | `fastqc` | `*_fastqc.[html / zip]` | in-depth quality evaluation on a per base and per sequence manner |
   | `finalBams` | `*.final.[bam / bai]` | final preprocessed BAM and index for downstream analysis |
+  | `laneMergedFastqs` | `*.merged.fastq.gz` | concatenated FASTQs; lane split only |
   | `trimmomatic` | `*.trimmomatic.log` | number of reads before and after trimming for quality |
 
   ---
@@ -27,7 +28,7 @@ import { Tabs, TabItem, Icon } from '@astrojs/starlight/components';
   :::
 
   </TabItem>
-  <TabItem label="Germline 🔵">
+  <TabItem label="Germline 🟢">
 
   | Output File | Description of File |
   | --- | --- |
